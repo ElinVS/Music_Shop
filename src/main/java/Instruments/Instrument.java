@@ -6,7 +6,7 @@ import Instruments.Enums.InstrumentType;
 import Instruments.Enums.MaterialType;
 
 
-public abstract class InstrumentStock implements IPlay, ISell {
+public abstract class Instrument implements IPlay, ISell {
 
     private String nameOfInstrument;
     private InstrumentType instrumentType;
@@ -18,7 +18,7 @@ public abstract class InstrumentStock implements IPlay, ISell {
     private double sellingPrice;
     private double buyingPrice;
 
-    public InstrumentStock(String nameOfInstrument, InstrumentType instrumentType, MaterialType materialType, String brand, String sound, double sellingPrice, double buyingPrice) {
+    public Instrument(String nameOfInstrument, InstrumentType instrumentType, MaterialType materialType, String brand, String sound, double sellingPrice, double buyingPrice) {
         this.nameOfInstrument = nameOfInstrument;
         this.instrumentType = instrumentType;
         this.materialType = materialType;
@@ -81,10 +81,6 @@ public abstract class InstrumentStock implements IPlay, ISell {
         return "The " + getNameOfInstrument().toLowerCase() + " sounds like this: " + getSound().toLowerCase();
     }
 
-    @Override
-    public double calculateMarkUp() {
-        return 0;
-    }
 
 
 }

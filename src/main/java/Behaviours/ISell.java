@@ -2,6 +2,5 @@ package Behaviours;
 
 public interface ISell {
 
-    double calculateMarkUp();
-
+    double calculateMarkUp(Double sellingPrice, Double buyingPrice);
 }
