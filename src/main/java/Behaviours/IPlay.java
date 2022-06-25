@@ -4,4 +4,3 @@ public interface IPlay {
 
     String playInstrument();
 }
-

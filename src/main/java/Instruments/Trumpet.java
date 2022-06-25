@@ -3,12 +3,12 @@ package Instruments;
 import Instruments.Enums.InstrumentType;
 import Instruments.Enums.MaterialType;
 
-public class Trumpet extends Instrument {
+public class Trumpet extends Instrument{
 
     private int numberOfValves;
 
-    public Trumpet(String nameOfInstrument,InstrumentType instrumentType, MaterialType materialType,  String brand, String sound,int sellingPrice, int buyingPrice, int numberOfValves) {
-        super(nameOfInstrument,instrumentType, materialType, brand, sound, sellingPrice, buyingPrice);
+    public Trumpet( String itemDescription, double sellingPrice, double buyingPrice, InstrumentType instrumentType, MaterialType materialType, String brand, String sound, int numberOfValves) {
+        super(itemDescription, sellingPrice, buyingPrice, instrumentType, materialType, brand, sound);
         this.numberOfValves = numberOfValves;
     }
 
@@ -16,9 +16,13 @@ public class Trumpet extends Instrument {
         return numberOfValves;
     }
 
+    @Override
+    public String playInstrument() {
+        return "The " + getItemDescription().toLowerCase() + " sounds like this: " + getSound().toLowerCase();
+    }
 
     @Override
-    public double calculateMarkUp(Double sellingPrice, Double buyingPrice) {
-        return sellingPrice-buyingPrice;
+    public double calculateMarkUp() {
+        return getSellingPrice() - getBuyingPrice();
     }
 }

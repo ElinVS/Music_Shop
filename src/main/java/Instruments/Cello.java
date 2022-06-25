@@ -3,25 +3,26 @@ package Instruments;
 import Instruments.Enums.InstrumentType;
 import Instruments.Enums.MaterialType;
 
-public class Cello extends Instrument {
+public class Cello extends Instrument{
 
-    private boolean comesWithABow;
+    private boolean soldWithBow;
 
-    public Cello(String nameOfInstrument, InstrumentType instrumentType, MaterialType materialType, String brand, String sound, double sellingPrice, double buyingPrice, boolean comesWithABow) {
-        super(nameOfInstrument, instrumentType, materialType, brand, sound, sellingPrice, buyingPrice);
-        this.comesWithABow = comesWithABow;
+    public Cello(String itemDescription, double sellingPrice, double buyingPrice, InstrumentType instrumentType, MaterialType materialType, String brand, String sound, boolean soldWithBow) {
+        super(itemDescription, sellingPrice, buyingPrice, instrumentType, materialType, brand, sound);
+        this.soldWithBow = soldWithBow;
     }
 
-    public boolean isComesWithABow() {
-        return comesWithABow;
-    }
-
-    public void setComesWithABow(boolean comesWithABow) {
-        this.comesWithABow = comesWithABow;
+    public boolean isSoldWithBow() {
+        return soldWithBow;
     }
 
     @Override
-    public double calculateMarkUp(Double sellingPrice, Double buyingPrice) {
-        return sellingPrice - buyingPrice;
+    public String playInstrument() {
+        return "The " + getItemDescription() + " sounds like this: " + getSound();
+    }
+
+    @Override
+    public double calculateMarkUp() {
+        return getSellingPrice() - getBuyingPrice();
     }
 }

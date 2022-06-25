@@ -1,4 +1,4 @@
-package InstrumentTests;
+package InstrumentsTest;
 
 import Instruments.Enums.InstrumentType;
 import Instruments.Enums.MaterialType;
@@ -12,14 +12,26 @@ public class TrumpetTest {
 
     Trumpet trumpet;
 
+
     @Before
     public void before(){
-        trumpet = new Trumpet("Trumpet",InstrumentType.BRASS, MaterialType.BRASS,"Bach", "Trumpety trump", 75, 50,4);
+        trumpet = new Trumpet("trumpet", 75.50,50,InstrumentType.BRASS,MaterialType.BRASS,"bach","tot-to-tot",4 );
+
     }
 
     @Test
-    public void hasAName(){
-        assertEquals("Trumpet", trumpet.getNameOfInstrument());
+    public void hasADescription(){
+        assertEquals("trumpet", trumpet.getItemDescription());
+    }
+
+    @Test
+    public void hasASellingPrice(){
+        assertEquals(75.50, trumpet.getSellingPrice(), 0.01);
+    }
+
+    @Test
+    public void hasABuyingPrice(){
+        assertEquals(50, trumpet.getBuyingPrice(), 0.01);
     }
 
     @Test
@@ -34,12 +46,12 @@ public class TrumpetTest {
 
     @Test
     public void hasABrand(){
-        assertEquals("Bach", trumpet.getBrand());
+        assertEquals("bach", trumpet.getBrand());
     }
 
     @Test
     public void hasASound(){
-        assertEquals("Trumpety trump", trumpet.getSound());
+        assertEquals("tot-to-tot", trumpet.getSound());
     }
 
     @Test
@@ -49,19 +61,13 @@ public class TrumpetTest {
 
     @Test
     public void canPlayInstrument(){
-        assertEquals("The trumpet sounds like this: trumpety trump", trumpet.playInstrument());
+        assertEquals("The trumpet sounds like this: tot-to-tot", trumpet.playInstrument());
     }
 
     @Test
-    public void hasASellingPrice(){
-        assertEquals(75,trumpet.getSellingPrice(), 0.01);
-    }
-
-    @Test
-    public void hasABuyingPrice(){
-        assertEquals(50,trumpet.getBuyingPrice(), 0.01);
+    public void shopItemsMarkUpPrice(){
+        assertEquals(25.50, trumpet.calculateMarkUp(),0.01);
     }
 
 
 }
-
