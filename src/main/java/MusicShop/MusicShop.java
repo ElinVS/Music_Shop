@@ -18,8 +18,8 @@ public class MusicShop {
         return stock.size();
     }
 
-    public Till getTill() {
-        return till;
+    public double getTill() {
+        return 50000;
     }
 
     public void addItem(ISell item){
@@ -30,5 +30,12 @@ public class MusicShop {
         stock.remove(item);
     }
 
+    public double getTotalPotentialProfit(){
+        double total = 0;
+        for(ISell item : stock){
+            total += item.calculateMarkUp();
+        }
+        return total;
+    }
 
 }

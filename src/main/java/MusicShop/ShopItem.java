@@ -29,4 +29,6 @@ public abstract class ShopItem implements ISell {
     public double getBuyingPrice() {
         return buyingPrice;
     }
+
+
 }

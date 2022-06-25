@@ -43,7 +43,7 @@ public class CustomerTest {
     @Test
     public void canAddItemToShoppingBag(){
         customer.addItem(bow);
-        assertEquals(0, customer.getShoppingBag());
+        assertEquals(1, customer.getShoppingBag());
     }
 
     @Test

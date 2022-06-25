@@ -66,7 +66,12 @@ public class MusicShopTest {
 
     @Test
     public void hasATill(){
-        assertEquals(50000, musicShop.getTill());
+        assertEquals(50000, musicShop.getTill(),0.01);
+    }
+
+    @Test
+    public void getTotalPotentialProfit(){
+        assertEquals(59.60, musicShop.getTotalPotentialProfit(),0.01);
     }
 
 }
