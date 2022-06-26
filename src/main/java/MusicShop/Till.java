@@ -8,7 +8,6 @@ public class Till {
         this.balance = balance;
     }
 
-
     public double getBalance() {
         return balance;
     }
